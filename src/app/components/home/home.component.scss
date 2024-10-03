@@ -1,0 +1,18 @@
+#row1 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  & h1 {
+    display: flex;
+    margin: 20px 0 50px 0;
+    font-size: 38px;
+    line-height: 44px;
+  }
+}
+
+#portretfoto {
+  width: 900px;
+  margin: 40px 0 0 0;
+}
