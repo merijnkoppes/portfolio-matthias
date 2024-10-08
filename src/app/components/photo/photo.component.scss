@@ -1,7 +1,46 @@
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 #header1 {
-    margin-top: 47px;
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    line-height: 44px;
+  margin-top: 47px;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+#paragraph1 {
+  margin: 48px 0 75px 0;
+  font-size: 15px;
+  line-height: 20px;
+  width: 846px;
+}
+
+#paragraph2 {
+  display: flex;
+  width: 846px;
+  margin: 30px 27px 80px 27px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.gallery {
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery img {
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.gallery img.single {
+  width: 100%;
+}
+
+.gallery img.double {
+  width: calc(50% - 10px);
 }
