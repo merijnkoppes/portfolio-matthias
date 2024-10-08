@@ -36,3 +36,45 @@
   font-size: 14px;
   line-height: 20px;
 }
+@media (max-width: 1024px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #portretfoto {
+    width: 600px;
+    margin-top: 30px;
+  }
+  #paragraph1 {
+    width: 550px;
+  }
+  #paragraph2 {
+    margin-top: 168px;
+  }
+  #row1 {
+    & h1 {
+      font-size: 28px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #portretfoto {
+    width: 400px;
+    margin-top: 20px;
+  }
+  #paragraph1 {
+    width: 380px;
+  }
+  #paragraph2 {
+    margin-top: 168px;
+  }
+}
+@media (max-width: 480px) {
+}
