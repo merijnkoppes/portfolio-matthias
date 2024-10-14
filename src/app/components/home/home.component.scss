@@ -17,7 +17,7 @@
   margin: 43px 0 16px 0;
 }
 
-#paragraph1 {
+.paragraph1 {
   margin: 0px 0px 27px 0px;
   text-align: left;
   flex-flow: column;
@@ -25,6 +25,10 @@
   font-family: Georgia, Times, Times New Roman, serif;
   font-size: 15px;
   line-height: 20px;
+}
+
+.para {
+  margin-bottom: 1lh;
 }
 
 #paragraph2 {
