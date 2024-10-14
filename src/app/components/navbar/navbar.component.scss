@@ -1,3 +1,63 @@
+// :host {
+//   z-index: 101;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   margin: 0;
+//   padding: 0;
+//   user-select: none;
+// }
+
+// .container {
+//   z-index: 5;
+//   background-color: #fff;
+//   border-top: 15px solid #fff;
+//   border-bottom: 2px solid #000;
+//   width: 1120px;
+//   // margin: 0 auto;
+//   padding: 20px 20px 20px 0;
+//   font-family: Georgia, Times, Times New Roman, serif;
+//   min-height: 30px;
+// }
+
+// .wrapper {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .link {
+//   color: #1a1b1f;
+//   letter-spacing: 0.25px;
+//   margin: 0 15px;
+//   font-size: 18px;
+//   font-weight: 200;
+//   line-height: 20px;
+//   text-decoration: none;
+// }
+
+// .link.active {
+//   border-bottom: 2px solid #000;
+//   font-weight: 400;
+// }
+
+// .normal-menu {
+//   margin-right: 50px;
+// }
+// .hamburger-menu {
+//   display: none;
+// }
+// .title {
+//   color: #000;
+//   padding-left: 55px;
+//   font-family: Georgia, Times, Times New Roman, serif;
+//   font-size: 18px;
+//   text-decoration: none;
+// }
 :host {
   z-index: 101;
   display: flex;
@@ -18,10 +78,8 @@
   border-top: 15px solid #fff;
   border-bottom: 2px solid #000;
   width: 1120px;
-  // margin: 0 auto;
   padding: 20px 20px 20px 0;
   font-family: Georgia, Times, Times New Roman, serif;
-  min-height: 30px;
 }
 
 .wrapper {
@@ -45,7 +103,7 @@
   font-weight: 400;
 }
 
-.menu {
+.normal-menu {
   margin-right: 50px;
 }
 
@@ -55,4 +113,65 @@
   font-family: Georgia, Times, Times New Roman, serif;
   font-size: 18px;
   text-decoration: none;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 50px;
+  z-index: 102; /* Ensure burger menu stays above */
+}
+
+.burger-menu span {
+  height: 2px;
+  width: 20px;
+  background: #000;
+  margin: 2px 0;
+  transition: 0.4s;
+}
+
+.mobile-menu {
+  display: none; /* Always display mobile menu */
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  transition: height 0.5s ease-out; /* Use height for smooth transition */
+  top: 60px; /* Adjust based on your navbar height */
+  left: 0;
+  height: 0; /* Collapsed by default */
+  padding-top: 10px; /* Add some padding when expanded */
+  border-bottom: 2px solid #000; /* Border for mobile menu */
+  z-index: 100; /* Ensure the mobile menu is below the burger menu */
+  margin-top: 10px;
+}
+
+.mobile-menu.show {
+  height: auto; /* Allow height to auto when opened */
+}
+
+@media (max-width: 768px) {
+  .normal-menu {
+    display: none; /* Hide normal menu on small screens */
+  }
+  .mobile-menu {
+    display: flex;
+  }
+  .burger-menu {
+    display: flex; /* Show burger menu on small screens */
+  }
+
+  .mobile-menu.show {
+    display: flex; /* Show the mobile menu when it's open */
+    height: auto; /* Allow height to auto when opened */
+  }
+
+  .link {
+    /* Center text and set width */
+    text-align: center; /* Center text */
+    width: auto; /* Ensure buttons are not 100% width */
+    margin: 10px auto; /* Center buttons horizontally and add spacing */
+  }
 }
